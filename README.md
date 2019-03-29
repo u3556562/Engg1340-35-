@@ -1,6 +1,6 @@
 # Engg1340-35-
-HKU ENGG1340 Project
-problem statement
+HKU ENGG1340 Project TOPIC:3
+Problem statement
 
 Setting: 1. the market starts with only one cashier line.
          2. the cost of opening a new cashier line get more expensive as the number of the total cashier line increases
