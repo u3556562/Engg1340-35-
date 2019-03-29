@@ -3,8 +3,8 @@ HKU ENGG1340 Project TOPIC:3
 Problem statement
 
 Setting: 1. the market starts with only one cashier line.
-         2. the cost of opening a new cashier line get more expensive as the number of the total cashier line increases
-	 3. customers with a lot of products (e.g. require more than 7 minutes) will not be only queueing in only one specific line. i.e. they are averagely separately to all cashier line if cashier line>1.
+         2. the cost of opening a new cashier line gets more expensive as the number of the total cashier line increases
+	 3. customers with a lot of products (e.g. require more than 7 minutes) will not be only queueing in only one specific line. i.e. they are averagely separated to all cashier line if cashier line>1.
 	 4. At first, with one cashier line, overflow happens and it is unsolvable due to the lack of resources.
 
 
