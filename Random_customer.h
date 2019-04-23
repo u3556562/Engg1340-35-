@@ -43,6 +43,7 @@ void random50customers(){
     cout << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
   }
   delete[] customerlist;
+  delete[] numbergrocery;
 }
 //int main(){
   //random50customers();
