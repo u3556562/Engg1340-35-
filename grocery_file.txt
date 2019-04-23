@@ -1,13 +1,36 @@
-Below Grocery Types are from "www.costco.co.uk"
-Tea, Coffee & Hot Drinks - 4 50
-Food Cupboard - 7 58
-Nuts, Snacks & Confectionery - 9 3800
-Entertaining - 7 200
-Chilled Foods - 11 350
-Food & Wine Gifts - 7 35
-Paper Products & Food Storage - 7 500
-Cleaning & Laundry Products - 5 29
-Household Sundries - 10 750
-Fireworks - 70 180
-Pets & Wildlife - 10 1200
-Water & Soft Drinks - 10 200
+Tea, Coffee & Hot Drinks
+4
+50
+Food Cupboard
+7
+58
+Nuts, Snacks & Confectionery
+9
+3800
+Entertaining
+7
+200
+Chilled Foods
+11
+350
+Food & Wine Gifts
+7
+35
+Paper Products & Food Storage
+7
+500
+Cleaning & Laundry Products
+5
+29
+Household Sundries
+10
+750
+Fireworks
+70
+180
+Pets & Wildlife
+10
+1200
+Water & Soft Drinks
+10
+200
