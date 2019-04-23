@@ -9,18 +9,24 @@ struct customertrolley{
 };
 
 void random50customers(){
-  const int custumerno = 50;
+  int customerno;
+  cin >> customerno;
+  customertrolley *customerlist;
+  int *numbergrocery;
+  customerlist = new customertrolley[customerno];
+  numbergrocery = new int[customerno];
+  //const int customerno = 50;
 
-  customertrolley customerlist[custumerno];
-  int numbergrocery[custumerno];
+  //customertrolley customerlist[customerno];
+  //int numbergrocery[customerno];
   srand(time(NULL));
-  for (int i=0;i<custumerno;i++){
+  for (int i=0;i<customerno;i++){
     numbergrocery[i] = 1+rand()%10;
     customerlist[i].order = i+1;
     customerlist[i].totalprice =0;
   }
 
-  for (int i=0; i<custumerno; i++){
+  for (int i=0; i<customerno; i++){
     for (int j=0; j<numbergrocery[i]; j++){
       //int whatgrocery = rand()%12;
       unsigned seed = chrono::steady_clock::now().time_since_epoch().count();
@@ -33,7 +39,11 @@ void random50customers(){
 
     }
   }
-  for (int i=0;i<custumerno;i++){
+  for (int i=0;i<customerno;i++){
     cout << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
   }
+  delete[] customerlist;
 }
+//int main(){
+  //random50customers();
+//}
