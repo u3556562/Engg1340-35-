@@ -8,7 +8,7 @@ struct customertrolley{
   int totalprice;
 };
 
-int main(){
+void random50customers(){
   const int custumerno = 50;
 
   customertrolley customerlist[custumerno];
