@@ -4,16 +4,22 @@
 #include <sstream>
 #include <stdlib.h>
 #include <time.h>
+#include <random>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+#include <cmath>
+#include <map>
 using namespace std;
 
 struct grocerytypeprice{
   string name;
-  int random;
+  unsigned random;
 };
 grocerytypeprice arr[12];
 int upper[12];
 int lower[12];
-int main(){
+void randomgroceryprice(){
   srand(time(NULL));
   ifstream grocery;
   grocery.open("groceryfile.txt");
@@ -43,10 +49,23 @@ while(getline(grocery,grocerytype)){
 }
 
 for (int i=0;i<12 ; i++){
-  arr[i].random = rand()%(upper[i]-lower[i]) + lower[i];
-  cout << arr[i].name << " " << arr[i].random  << endl;
+  unsigned seed = chrono::steady_clock::now().time_since_epoch().count();
+  uniform_int_distribution<int> uniform_dist(lower[i],upper[i]);
+  default_random_engine pb(seed);
+  arr[i].random = uniform_dist(pb);
+  //arr[i].random = prng;
+  //cout << arr[i].name << " " << arr[i].random  << endl;
 
 }
 
 grocery.close();
 
+
+
+
+
+
+
+
+
+}
