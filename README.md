@@ -8,9 +8,7 @@ Setting: 1. the market starts with only one cashier line.
 	 4. At first, with one cashier line, overflow happens and it is unsolvable due to the lack of resources.
 	 5. Price and time are directly proportional, neglecting the grocery type.
 	 6. Trolley at most can contain 10 products
-	 7. Process time is directly proportional to the price
-	 
-
+	 7. Product types have no effect on process time
 
 Target: try to reduce all cashier waiting time to <15 minutes and maximise the profit by rearranging the customers' position, say, if one of the customers make the waiting time >15, move him/her to other cashier.
 
