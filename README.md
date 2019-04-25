@@ -7,6 +7,8 @@ Setting: 1. the market starts with only one cashier line.
 	 3. customers with a lot of products (e.g. require more than 7 minutes) will not be only queueing in only one specific line. i.e. they are averagely separated to all cashier line if cashier line>1.
 	 4. At first, with one cashier line, overflow happens and it is unsolvable due to the lack of resources.
 	 5. Price and time are directly proportional, neglecting the grocery type.
+	 6. Trolley at most can contain 10 products
+	 7. Process time is directly proportional to the price
 	 
 
 
