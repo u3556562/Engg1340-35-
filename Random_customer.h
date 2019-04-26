@@ -1,5 +1,9 @@
+#ifndef RANDOM
+#define RANDOM
+
 #include <iostream>
-#include "a.h"
+#include "getinfofromgrocery.h"
+#include "extern.h
 
 using namespace std;
 
@@ -7,11 +11,11 @@ struct customertrolley{
   int order;
   int totalprice;
 };
+int customerno;
+customertrolley* customerlist=NULL;
 
 void random50customers(){
-  int customerno;
   cin >> customerno;
-  customertrolley *customerlist;
   int *numbergrocery;
   customerlist = new customertrolley[customerno];
   numbergrocery = new int[customerno];
@@ -45,6 +49,7 @@ void random50customers(){
   delete[] customerlist;
   delete[] numbergrocery;
 }
+#endif
 //int main(){
   //random50customers();
 //}
