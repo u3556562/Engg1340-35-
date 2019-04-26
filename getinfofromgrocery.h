@@ -1,5 +1,5 @@
-#ifndef GETINFO
-#define GETINFO
+#ifndef GETINFO_H
+#define GETINFO_H
 
 #include <iostream>
 #include <fstream>
@@ -72,5 +72,4 @@ grocery.close();
 
 
 }
-
-#endif
+#endif //GETINFO_H
