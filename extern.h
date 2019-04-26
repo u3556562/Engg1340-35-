@@ -1,7 +1,12 @@
 #ifndef EXTERN
 #define EXTERN
 
+struct customertrolley{
+  int order;
+  int totalprice;
+};
+extern in
 extern int customerno;
-extern struct customertrolley *customerlist;
+extern customertrolley *customerlist;
 
 #endif
