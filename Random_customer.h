@@ -7,12 +7,8 @@
 
 using namespace std;
 
-struct customertrolley{
-  int order;
-  int totalprice;
-};
 int customerno;
-customertrolley* customerlist=NULL;
+customertrolley* customerlist;
 
 void random50customers(){
   cin >> customerno;
