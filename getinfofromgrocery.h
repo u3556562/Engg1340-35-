@@ -1,3 +1,6 @@
+#ifndef GETINFO
+#define GETINFO
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -69,3 +72,5 @@ grocery.close();
 
 
 }
+
+#endif
