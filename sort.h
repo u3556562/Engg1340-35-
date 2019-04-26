@@ -9,7 +9,7 @@
 using namespace std;
 
 void sort(){
-	int time[customerno];
+	int *time=new int[customerno];
 
 	for (int i=0;i<customerno;i++){
 		time[i]=customerlist[i].totalprice/10;
@@ -57,7 +57,7 @@ void sort(){
 	for(int i=0;i<column;i++){
 		cout<<"Cashier "<<i+1<<":"<<endl;
 		for (int j=0;j<row;j++){
-			if (cashier[j][i].order==0){
+			if (cashier[j][i].order<=0||cashier[j][i].order>customerno){
 				continue;
 			}
 			else{
