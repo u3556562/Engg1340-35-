@@ -22,7 +22,7 @@ int lower[12];
 void randomgroceryprice(){
   srand(time(NULL));
   ifstream grocery;
-  grocery.open("groceryfile.txt");
+  grocery.open("grocery_file.txt");
   if (grocery.fail()){
     cout << "FAILED" << endl;
     exit(1);
