@@ -7,12 +7,8 @@
 
 using namespace std;
 
-struct customertrolley{
-  int order;
-  int totalprice;
-};
 int customerno;
-customertrolley* customerlist=NULL;
+customertrolley* customerlist;
 
 void random50customers(){
   cin >> customerno;
@@ -46,7 +42,6 @@ void random50customers(){
   for (int i=0;i<customerno;i++){
     cout << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
   }
-  delete[] customerlist;
   delete[] numbergrocery;
 }
 #endif
