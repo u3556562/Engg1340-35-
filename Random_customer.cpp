@@ -1,5 +1,6 @@
 #include <iostream>
-#include "a.h"
+#include <bits/stdc++.h>
+#include "getinfofromgrocery.h"
 
 using namespace std;
 
@@ -7,7 +8,12 @@ struct customertrolley{
   int order;
   int totalprice;
 };
-
+void swap(int *a, int *b){
+  int temp;
+  temp =*a;
+  *a = *b;
+  *b = temp;
+}
 void random50customers(){
   int customerno;
   cin >> customerno;
@@ -39,9 +45,25 @@ void random50customers(){
 
     }
   }
-  for (int i=0;i<customerno;i++){
-    cout << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
+  //for (int i=0;i<customerno;i++){
+    //cout << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
+  //}
+  int idx,max_idx;
+  for (int i=0;i<customerno-1;i++){
+    max_idx = i;
+    for (int j=i+1; j<customerno; j++){
+      if (customerlist[j].totalprice> customerlist[max_idx].totalprice){
+        max_idx = j;
+      }
+    }
+      swap(&customerlist[i].totalprice,&customerlist[max_idx].totalprice);
+      swap(&customerlist[i].order,&customerlist[max_idx].order);
+
   }
+  for (int i=0;i<customerno;i++){
+    cout << customerlist[i].order << " " << customerlist[i].totalprice << endl;
+  }
+
   delete[] customerlist;
   delete[] numbergrocery;
 }
