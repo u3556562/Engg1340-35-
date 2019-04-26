@@ -1,0 +1,2 @@
+mainfunction:extern.h getinfofromgrocery.h Random_customer.h sort.h
+	g++ -o mainfunction.cpp mainfunction
