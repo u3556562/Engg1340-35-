@@ -26,5 +26,6 @@ WARNING: We suggest you to not use our default input as it is a random event cod
 
 
 How To Run:
-Command: make mainfunction
-         ./mainfunction
+Command: 
+make mainfunction
+./mainfunction
