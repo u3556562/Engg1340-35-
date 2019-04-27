@@ -21,4 +21,9 @@ Try to use as little time as possible to pay back all the debt and start making 
 
 
 Note:
-We suggest you to not use our default input as it is a random event code, with the same input there is a very high chance of different output
+WARNING: We suggest you to not use our default input as it is a random event code, with the same input there is a very high chance of different output
+
+
+
+How To Run:
+Command: make mainfunction | ./mainfunction
