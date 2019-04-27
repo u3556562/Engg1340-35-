@@ -31,11 +31,15 @@ void sort(){
 			}
 		}
 	}
+
+	//row[i]=number of element in cashier i+1 for i = 0 -> column
+	//cashier no = column
 	customertrolley** cashier=new customertrolley* [customerno];
 	for (int i=0;i<customerno;i++){
 		cashier[i]=new customertrolley[customerno];
 	}
-	int row=0, column=0, count=0, temp=0, n=0, end=0;
+	int *row= new int[customerno];
+	int column=0, count=0, temp=0, n=0, end=0;
 	while (count<customerno){
 		for (int i=0;i<temp;i++){
 			n+=cashier[i][column].totalprice/10+1;
@@ -46,54 +50,39 @@ void sort(){
 		}
 		else{
 			cashier[temp][column]=customerlist[customerno-end-1];
-			if (temp>row){
-				row=temp+1;
-			}
+			row[column]=temp+1;
 			end++, column++, count++;
 			temp=0;
 		}
 		n=0;
 	}
+	row[column]=temp;
+	column++;
 	for(int i=0;i<column;i++){
-		for (int j=0;j<row;j++){
-	cout<<"i = " << i << "j = " << j <<" "<<cashier[j][i].order<<"	"<<cashier[j][i].totalprice<<"	" << endl;
-}}
+		for (int j=0;j<row[i];j++){
+			cout<<"i = " << i << "j = " << j <<" "<<cashier[j][i].order<<"	"<<cashier[j][i].totalprice<<"	" << endl;
+		}
+	}
 	int waitingtime=0;
 	for(int i=0;i<column;i++){
 		cout<<"Cashier "<<i+1<<":"<<endl;
-		for (int j=0;j<row;j++){
-			if (cashier[j][i].order<=0||cashier[j][i].order>customerno){
-				continue;
+		for (int j=row[i]-1;j>=0;j--){
+			for (int k=0;k<j;k++){
+				waitingtime+=cashier[k][i].totalprice/10+1;
 			}
-			else{
-				for (int k=0;k<j;k++){
-					waitingtime+=cashier[k][i].totalprice/10+1;
-				}
-				cout<<"Customer "<<cashier[j][i].order<<"	"<<cashier[j][i].totalprice<<"	"<<waitingtime<<endl;;
-				waitingtime=0;
-			}
+			cout<<"Customer "<<cashier[j][i].order<<"	"<<cashier[j][i].totalprice<<"	"<<waitingtime<<endl;;
+			waitingtime=0;
 		}
 	}
 
-
-
-
-
-
-
-
 //===============================FOLLOW UP ACTION===================================
 
-
-
-
-
-//				If the array has no bug, e.g. no elements missing and no overflow
-// 				I can set column = column*2
+//				If the array has no bug, e.g. no elements missing and no overflow    (change row to array to record no of element in each column)
+// 				I can set column = column*2    (don't understand)
 // 				as in the photo I sent to you, the most expensive customers should be at the top of the queue
-// 				and the first customer of the cashier line has waiting time < 900
+// 				and the first customer of the cashier line has waiting time < 900    (should be corrected)
 // 				meaning that cashier line can handle the second customer after the first one finished
-// 				so the column can double
+// 				so the column can double    (don't understand)
 //				and the cusotomerlist is in reverse order (i.e. last element of the customerlist is the most expensive one)
 //				Below is how I add the most expensive customer's trolley price to our netincome
 
