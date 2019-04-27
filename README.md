@@ -26,9 +26,6 @@ Try to use as little time as possible to pay back all the debt and start making 
 
 WARNING: We suggest you to not use our default input as it is a random event code, with the same input there is a very high chance of different output
 
-Declaration:
-Contribution of my groupmate(Yu Wing Hang) is surely more than 25% but most of the time I (rickychak) commited to github after the face-to-face meetings, so, in github, the contribution of his cannot reflect his actual contribution.
-
 How To Run:
 Command: 
 make mainfunction
