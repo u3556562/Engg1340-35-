@@ -61,6 +61,7 @@ void random50customers(){
       swap(&customerlist[i].order,&customerlist[max_idx].order);
 
   }
+  cout << endl;
   cout << "After sorting" << endl;
   for (int i=0;i<customerno;i++){
     cout << "Customer " << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
