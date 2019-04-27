@@ -91,6 +91,10 @@ void sort(){
 			cout<<"Customer "<<overflow[i].order<<"	"<<overflow[i].totalprice<<endl;
 		}
 	}
+	
+	
+	
+// =============================FOLLOW-UP ACTION======================================
 	int realnetincome=0;
 	//cout << column << endl;
 	for (int i=0;i<cashierno;i++){
@@ -101,9 +105,9 @@ void sort(){
 
 // 				I customised some expenses to make it difficult to save money and open a new cashier line
 	cout <<"NETINCOME = " << realnetincome << endl;
-	cout << "Cashier Operating Costs = " << cashierno*2500 << endl;
-	cout << "Other Expenses = " << cashierno*1000+500 << endl;
-	netincome = netincome - cashierno*2500 - cashierno*1000 - 500;
+	cout << "Cashier Operating Costs = " << cashierno*1500 << endl;
+	cout << "Other Expenses = " << cashierno*500+500 << endl;
+	netincome = netincome - cashierno*1500 - cashierno*5000 - 500;
 	cout <<"Net Profit = " << netincome<< endl;
 
 
