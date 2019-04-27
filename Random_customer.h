@@ -45,9 +45,10 @@ void random50customers(){
 
     }
   }
-  //for (int i=0;i<customerno;i++){
-    //cout << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
-  //}
+  cout << "Before sorting" << endl;
+  for (int i=0;i<customerno;i++){
+    cout << "Customer " << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
+  }
   int idx,max_idx;
   for (int i=0;i<customerno-1;i++){
     max_idx = i;
@@ -60,8 +61,9 @@ void random50customers(){
       swap(&customerlist[i].order,&customerlist[max_idx].order);
 
   }
+  cout << "After sorting" << endl;
   for (int i=0;i<customerno;i++){
-    cout << customerlist[i].order << " " << customerlist[i].totalprice << endl;
+    cout << "Customer " << customerlist[i].order <<" " << customerlist[i].totalprice << endl;
   }
   delete[] numbergrocery;
 }
