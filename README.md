@@ -14,6 +14,7 @@ Setting:
 9. It is totally an RNG event, the days needed for you to make the net profit > 0 may differ in differnt trials
 10. If number of cashier lines is larger than it actually needs, cashier line with no customer will appear and you still need to pay for the cashier expenses
 11. Only the top n (n = number of cashier lines) highest total grocery price customers' moeny will be counted as income, the rest will be used for buying the grocery and workers' income
+12. Every cashier line should have less than 900s waiting time (It's cumulative, the first customer of the cashier line has the whole cashier line total waiting time)
 
 Goal:
 Try to use as little time as possible to pay back all the debt and start making money
