@@ -16,3 +16,9 @@ Setting:
 
 Goal:
 Try to use as little time as possible to pay back all the debt and start making money
+
+
+
+
+Note:
+We suggest you to not use our default input as it is a random event code, with the same input there is a very high chance of different output
