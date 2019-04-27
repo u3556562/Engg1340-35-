@@ -1,13 +1,15 @@
+#ifndef RANDOM_H
+#define RANDOM_H
+
 #include <iostream>
-#include <bits/stdc++.h>
 #include "getinfofromgrocery.h"
+#include "extern.h"
 
 using namespace std;
 
-struct customertrolley{
-  int order;
-  int totalprice;
-};
+int customerno;
+customertrolley *customerlist;
+
 void swap(int *a, int *b){
   int temp;
   temp =*a;
@@ -15,9 +17,7 @@ void swap(int *a, int *b){
   *b = temp;
 }
 void random50customers(){
-  int customerno;
   cin >> customerno;
-  customertrolley *customerlist;
   int *numbergrocery;
   customerlist = new customertrolley[customerno];
   numbergrocery = new int[customerno];
@@ -63,10 +63,9 @@ void random50customers(){
   for (int i=0;i<customerno;i++){
     cout << customerlist[i].order << " " << customerlist[i].totalprice << endl;
   }
-
-  delete[] customerlist;
   delete[] numbergrocery;
 }
-//int main(){
-  //random50customers();
-//}
+#endif //GETINFO_H
+int main(){
+  random50customers();
+}

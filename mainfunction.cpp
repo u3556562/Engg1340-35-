@@ -1,13 +1,8 @@
 #include <iostream>
 #include "Random_customer.h"
-#include "sort.h"
+#include "sort v2.h"
 
 using namespace std;
-
-
-
-
-//              I Strongly suggest you to download all the files and run the program, I guess you will understand what I'm trying to archieve
 
 int main(){
   char response='Y';

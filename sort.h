@@ -7,7 +7,9 @@
 #include "extern.h"
 #include "Random_customer.h"
 using namespace std;
-int netincome = 0;
+int netincome = -1000000;
+int cashierno;
+
 void sort(){
 	int *time=new int[customerno];
 
@@ -39,8 +41,19 @@ void sort(){
 		cashier[i]=new customertrolley[customerno];
 	}
 	int *row= new int[customerno];
-	int column=0, count=0, temp=0, n=0, end=0;
+	customertrolley *overflow = new customertrolley[customerno];
+	int cashierno,column=0, count=0, temp=0, n=0, end=0, overflownum=0;
+	cout<<"Number of cashier: ";
+	cin>>cashierno;
+
 	while (count<customerno){
+		if (column==cashierno){
+			for (int i=0;i<customerno-count;i++){
+				overflow[i]=customerlist[count-end+i];
+				overflownum++;
+			}
+			break;
+		}
 		for (int i=0;i<temp;i++){
 			n+=cashier[i][column].totalprice/10+1;
 		}
@@ -56,15 +69,12 @@ void sort(){
 		}
 		n=0;
 	}
-	row[column]=temp;
-	column++;
-	for(int i=0;i<column;i++){
-		for (int j=0;j<row[i];j++){
-			cout<<"i = " << i << "j = " << j <<" "<<cashier[j][i].order<<"	"<<cashier[j][i].totalprice<<"	" << endl;
-		}
+	if (count==customerno){
+		row[column]=temp;
+		column++;
 	}
 	int waitingtime=0;
-	for(int i=0;i<column;i++){
+	for(int i=0;i<cashierno;i++){
 		cout<<"Cashier "<<i+1<<":"<<endl;
 		for (int j=row[i]-1;j>=0;j--){
 			for (int k=0;k<j;k++){
@@ -73,48 +83,41 @@ void sort(){
 			cout<<"Customer "<<cashier[j][i].order<<"	"<<cashier[j][i].totalprice<<"	"<<waitingtime<<endl;;
 			waitingtime=0;
 		}
+		cout<<endl;
 	}
-
-//===============================FOLLOW UP ACTION===================================
-
-//				If the array has no bug, e.g. no elements missing and no overflow    (change row to array to record no of element in each column)
-// 				I can set column = column*2    (don't understand)
-// 				as in the photo I sent to you, the most expensive customers should be at the top of the queue
-// 				and the first customer of the cashier line has waiting time < 900    (should be corrected)
-// 				meaning that cashier line can handle the second customer after the first one finished
-// 				so the column can double    (don't understand)
-//				and the cusotomerlist is in reverse order (i.e. last element of the customerlist is the most expensive one)
-//				Below is how I add the most expensive customer's trolley price to our netincome
-
+	if (overflownum!=0){
+		cout<<"Overflow:"<<endl;
+		for (int i=0;i<overflownum;i++){
+			cout<<"Customer "<<overflow[i].order<<"	"<<overflow[i].totalprice<<endl;
+		}
+	}
+	int realnetincome=0;
 	//cout << column << endl;
-	int realnetincome = 0;
-	for (int i=0;i<column*2;i++){
-		//cout << customerlist[customerno-1-i].totalprice << endl;
-		realnetincome+=customerlist[customerno-1-i].totalprice;
+	for (int i=0;i<cashierno;i++){
 		netincome+=customerlist[customerno-1-i].totalprice;
+		realnetincome+=customerlist[customerno-1-i].totalprice;
 	}
 
 
 // 				I customised some expenses to make it difficult to save money and open a new cashier line
 	cout <<"NETINCOME = " << realnetincome << endl;
-	cout << "Cashier Operating Costs = " << column*10000 << endl;
-	cout << "Other Expenses = " << column*1000+500 << endl;
-	netincome = netincome - column*10000 - column*1000 - 500;
+	cout << "Cashier Operating Costs = " << cashierno*2500 << endl;
+	cout << "Other Expenses = " << cashierno*1000+500 << endl;
+	netincome = netincome - cashierno*2500 - cashierno*1000 - 500;
 	cout <<"Net Profit = " << netincome<< endl;
 
 
 
 // 				If I can directly change the cashier line number (I'm not sure if column = number of cashier)
 //				And I can't change the column either, so I left a comment there
-	//cout << "Do you want to open a new cashier line? Cost = " << column*5000 << " (Y/N): ";
+	//cout << "Do you want to open a new cashier line? Cost = " << cashierno*5000 << " (Y/N): ";
 	//char reply;
 	//cin >> reply;
 	//cout << endl;
 	//while (true){
 	//if (reply=='Y'){
-		//(no of cashier+1)
-		//column++;
-		//netincome -= column*5000;
+		//cashierno++;
+		//netincome -= cashierno*5000;
 		//break;
 	//}
 	//else if (reply=='N'){
@@ -122,7 +125,7 @@ void sort(){
 	//}
 	//else if (reply!='Y' and reply!='N'){
 		//cout << "Unknown Command! " <<endl;
-		//cout << "Do you want to open a new cashier line? Cost = " << column*5000 << " (Y?N): ";
+	//	cout << "Do you want to open a new cashier line? Cost = " << cashierno*5000 << " (Y?N): ";
 		//cin>>reply;
 	//}
 //}
